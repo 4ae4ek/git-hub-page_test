@@ -2,8 +2,9 @@ import React, {useState} from 'react';
 import {NavLink} from "react-router-dom";
 
 const HeaderNavLink = props => {
+    let url = "git-hub-page_test" + props.url
     return (
-        <NavLink to={props.url}>
+        <NavLink to={url}>
             <div className="hover:text-blue-600">{props.text}</div>
         </NavLink>
     )
@@ -14,7 +15,7 @@ const Header = (props) => {
     return (
         <div className="bg-white py-4 shadow-md">
             <div className="container mx-auto flex justify-between items-center px-4 md:px-0">
-                <NavLink to="/">
+                <NavLink to="git-hub-page_test/">
                     <div className="text-2xl md:text-3xl font-bold text-blue-600">AITested</div>
                 </NavLink>
 
@@ -36,7 +37,7 @@ const Header = (props) => {
                     <HeaderNavLink text='Our Services' url='/ourServices'></HeaderNavLink>
                     <HeaderNavLink text='Contact Us' url='/contacts'></HeaderNavLink>
                 </nav>
-                <NavLink to="/demoPortal">
+                <NavLink to="git-hub-page_test/demoPortal">
                     <button
                         className="hidden md:block px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-500">Portal
                         Demo
@@ -51,8 +52,9 @@ const Header = (props) => {
                 <HeaderNavLink text='Price' url='/price'></HeaderNavLink>
                 <HeaderNavLink text='Our Services' url='/ourServices'></HeaderNavLink>
                 <HeaderNavLink text='Contact Us' url='/contacts'></HeaderNavLink>
-                <button className="w-full px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-500">Portal Demo
-                </button>
+                <NavLink to="git-hub-page_test/demoPortal">
+                    <button className="w-full px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-500">Portal Demo</button>
+                </NavLink>
             </div>
         </div>
     )
