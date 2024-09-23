@@ -14,13 +14,13 @@ const Header = (props) => {
     const [menuActive, setMenuActive] = useState(false);
     return (
         <div className="bg-white py-4 shadow-md">
-            <div className="container mx-auto flex justify-between items-center px-4 md:px-0">
+            <div className="container mx-auto flex justify-between items-center px-6 md:px-0">
                 <NavLink to="git-hub-page_test/">
                     <div className="text-2xl md:text-3xl font-bold text-blue-600">AITested</div>
                 </NavLink>
 
                 {/*Hamburger Icon for mobile*/}
-                <div className="md:hidden">
+                <div className="md:hidden ml-auto">
                     <button id="menu-btn" className="focus:outline-none" onClick={() => setMenuActive(!menuActive)}>
                         <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                              xmlns="http://www.w3.org/2000/svg">
@@ -31,7 +31,7 @@ const Header = (props) => {
                 </div>
 
                 {/*Navigation Menu*/}
-                <nav id="menu" className="hidden md:flex space-x-4 text-lg">
+                <nav id="menu" className="hidden  md:flex space-x-4 text-lg">
                     <HeaderNavLink text='About Us' url='/aboutUs'></HeaderNavLink>
                     <HeaderNavLink text='Price' url='/price'></HeaderNavLink>
                     <HeaderNavLink text='Our Services' url='/ourServices'></HeaderNavLink>
@@ -47,15 +47,18 @@ const Header = (props) => {
 
 
             {/*Mobile Menu*/}
-            <div id="mobile-menu" className={menuActive ? "bg-white px-4 py-2 space-y-2":"hidden md:hidden bg-white px-4 py-2 space-y-2"}>
+            <div id="mobile-menu" className={`md:hidden bg-white px-4 py-2 space-y-2 flex flex-col items-center ${menuActive ? '' : 'hidden'}`}>
                 <HeaderNavLink text='About Us' url='/aboutUs'></HeaderNavLink>
                 <HeaderNavLink text='Price' url='/price'></HeaderNavLink>
                 <HeaderNavLink text='Our Services' url='/ourServices'></HeaderNavLink>
                 <HeaderNavLink text='Contact Us' url='/contacts'></HeaderNavLink>
                 <NavLink to="git-hub-page_test/demoPortal">
-                    <button className="w-full px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-500">Portal Demo</button>
+                    <button className="w-full px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-500">Portal
+                        Demo
+                    </button>
                 </NavLink>
             </div>
+
         </div>
     )
 }
